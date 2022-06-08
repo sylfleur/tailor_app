@@ -32,10 +32,95 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Padding(
         padding: const EdgeInsets.all(25.0),
         child: Column(
-          children: const <Widget>[
-            SearchWidget(),      
+          children: <Widget>[
+            SearchWidget(),
+            Row(
+              // crossAxisAlignment: CrossAxisAlignment.,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                IconButton(
+                  onPressed: null,
+                  icon: Icon(
+                    Icons.money,
+                  ),
+                ),
+                IconButton(
+                  onPressed: null,
+                  icon: Icon(
+                    Icons.timer,
+                  ),
+                ),
+                IconButton(
+                  onPressed: null,
+                  icon: Icon(
+                    Icons.mark_chat_unread_sharp,
+                  ),
+                ),
+                IconButton(
+                  onPressed: null,
+                  icon: Icon(
+                    Icons.drafts,
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              padding: EdgeInsets.all(25.0),
+              decoration: BoxDecoration(
+                border: Border.all(),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Create new Invoice',
+                    style: TextStyle(),
+                  ),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: Colors.teal,
+                    ),
+                    onPressed: null,
+                    child: Text(
+                      'Start Now',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(
+            label: '-',
+            icon: Icon(
+              Icons.home,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: '',
+            icon: Icon(
+              Icons.quiz,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: '',
+            icon: Icon(
+              Icons.person_sharp,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: '',
+            icon: Icon(
+              Icons.settings,
+            ),
+          ),
+        ],
       ),
     );
   }
