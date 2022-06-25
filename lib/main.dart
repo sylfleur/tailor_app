@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tailor_app_manager/screens/home_screen.dart';
+
+import 'screens/clients_screen.dart';
+import 'widget/shared/bottom_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +22,27 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.white, elevation: 0.0,
             iconTheme: IconThemeData(color: Colors.black87),
           )),
-      home: const HomeScreen(),
+      home: Scaffold(
+        drawer: const Drawer(),
+        appBar: AppBar(
+          centerTitle: true,
+          title: const Text(
+            'Home',
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+          actions: <Widget>[
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.notifications_none),
+            ),
+          ],
+        ),
+        body: const ShowClient(),
+              bottomNavigationBar: const BottomNavWidget(),
+      ),
+      // ,
       debugShowCheckedModeBanner: false,
     );
   }

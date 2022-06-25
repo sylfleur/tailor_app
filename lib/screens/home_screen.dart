@@ -2,36 +2,19 @@
 import 'package:flutter/material.dart';
 import 'package:tailor_app_manager/widget/shared/search.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class DashBoard extends StatefulWidget {
+  const DashBoard({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<DashBoard> createState() => _DashBoardState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _DashBoardState extends State<DashBoard> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: Drawer(),
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'Home',
-          style: TextStyle(
-            color: Colors.black,
-          ),
-        ),
-        actions: const <Widget>[
-          IconButton(
-            onPressed: null,
-            icon: Icon(Icons.notifications_none),
-          ),
-        ],
-      ),
-      body: Padding(
+    return Padding(
         padding: const EdgeInsets.all(25.0),
-        child: Column(
+        child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             SearchWidget(),
             Row(
@@ -90,38 +73,28 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-            )
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              // crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                const Text(
+                  'Latest Activities',
+                  style: TextStyle(
+                    fontSize: 15.0,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.download,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
-            label: '-',
-            icon: Icon(
-              Icons.home,
-            ),
-          ),
-          BottomNavigationBarItem(
-            label: '',
-            icon: Icon(
-              Icons.quiz,
-            ),
-          ),
-          BottomNavigationBarItem(
-            label: '',
-            icon: Icon(
-              Icons.person_sharp,
-            ),
-          ),
-          BottomNavigationBarItem(
-            label: '',
-            icon: Icon(
-              Icons.settings,
-            ),
-          ),
-        ],
-      ),
-    );
+      );
+
   }
 }
