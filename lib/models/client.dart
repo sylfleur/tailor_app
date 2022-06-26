@@ -44,29 +44,5 @@ class Client {
       });
 
       int get idClient => id;
-
-      unClient() {
-        return Client(
-          id: id,
-          telephone: telephone,
-          nom: nom,
-          prenom: prenom,
-          email: email,
-          adresse: adresse,
-          codePostal: codePostal,
-          ville: ville,
-          pays: pays,
-          note: note,
-          // dateNaissance: dateNaissance,
-          // dateInscription: dateInscription,
-          // dateDerniereVisite: dateDerniereVisite,
-          // dateDernierPaiement: dateDernierPaiement,
-          // dateDernierFacture: dateDernierFacture,
-          // dateDernierRemboursement: dateDernierRemboursement,
-          // dateDernierAvoir: dateDernierAvoir,
-          // dateDernierAvoirRemboursement: dateDernierAvoirRemboursement,
-          // dateDernierAvoirFacture: dateDernierAvoirFacture,
-          // dateDernierAvoirPaiement: dateDernierAvoirPaiement,
-        );
-      }
+      
 }
