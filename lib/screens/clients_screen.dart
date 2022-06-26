@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tailor_app_manager/models/client.dart';
-
 import '../data_init/client_init.dart';
 
 class ShowClient extends StatefulWidget {

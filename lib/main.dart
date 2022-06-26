@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'screens/clients_screen.dart';
+import 'package:tailor_app_manager/screens/home_screen.dart';
 import 'widget/shared/bottom_bar.dart';
 
 void main() {
@@ -39,7 +38,7 @@ class MyApp extends StatelessWidget {
             ),
           ],
         ),
-        body: const ShowClient(),
+        body: const DashBoard(),
               bottomNavigationBar: const BottomNavWidget(),
       ),
       // ,
