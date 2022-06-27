@@ -37,7 +37,8 @@ ClientInit clientInit = ClientInit();
     return ListView.builder(
       itemCount: clientInit.getClientsLength(),
       itemBuilder: (context, int position) {
-        return Card(
+        return 
+        Card(
           color: Colors.teal,
           child: ListTile(
             leading: const CircleAvatar(),
@@ -45,7 +46,8 @@ ClientInit clientInit = ClientInit();
              ),
             subtitle: Text(clientInit.getAllClient()[position].telephone),
           ),
-        );
+        )
+        ;
       },
     );
   }

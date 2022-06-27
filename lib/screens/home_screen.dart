@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tailor_app_manager/widget/shared/search.dart';
 
 import '../data_init/client_init.dart';
+import '../widget/shared/activities_widget.dart';
 
 class DashBoard extends StatefulWidget {
   const DashBoard({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class _DashBoardState extends State<DashBoard> {
     return Padding(
       padding: const EdgeInsets.all(25.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           SearchWidget(),
           Row(
@@ -79,7 +80,8 @@ class _DashBoardState extends State<DashBoard> {
               ],
             ),
           ),
-          Row(
+          Column(
+            children: [Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             // crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -97,33 +99,16 @@ class _DashBoardState extends State<DashBoard> {
               ),
             ],
           ),
-          LastestActivitesWidget(clientInit: clientInit, x: 0, ),
-          LastestActivitesWidget(clientInit: clientInit, x: 1),
-          ],
-      ),
-    );
-  }
-}
+          
+              LastestActivitesWidget(
+                clientInit: clientInit,
+                x: 0,
 
-class LastestActivitesWidget extends StatelessWidget {
-  const LastestActivitesWidget({
-    Key? key,
-    required this.clientInit, required this.x,
-  }) : super(key: key);
-
-  final ClientInit clientInit;
-  final int x;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      color: Colors.teal,
-      child: ListTile(
-        leading: const CircleAvatar(),
-        title: Text(clientInit.getTwoLastClients()[x].nom.toUpperCase() +
-            ' ' +
-            clientInit.getAllClient()[x].prenom),
-        subtitle: Text(clientInit.getTwoLastClients()[x].telephone),
+              ),
+              LastestActivitesWidget(clientInit: clientInit, x: 1),
+            ],
+          ),
+        ],
       ),
     );
   }

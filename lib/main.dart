@@ -9,9 +9,11 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  static final ValueNotifier<Widget> bodyView =
+      ValueNotifier<Widget>(const DashBoard());
+
   @override
   Widget build(BuildContext context) {
-    // print(context);
     return MaterialApp(
       title: 'Tailor Manager',
       theme: ThemeData(
@@ -38,8 +40,12 @@ class MyApp extends StatelessWidget {
             ),
           ],
         ),
-        body: const DashBoard(),
-              bottomNavigationBar: const BottomNavWidget(),
+        body: ValueListenableBuilder(
+            valueListenable: bodyView,
+            builder: (BuildContext context, Widget value, Widget? child) {
+              return bodyView.value;
+            }),
+        bottomNavigationBar: const BottomNavWidget(),
       ),
       // ,
       debugShowCheckedModeBanner: false,
